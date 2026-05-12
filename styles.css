@@ -105,6 +105,14 @@ body {
     color: var(--white);
 }
 
+.contact-btn.active {
+    color: var(--white);
+}
+
+.contact-btn.active::after {
+    display: none;
+}
+
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
