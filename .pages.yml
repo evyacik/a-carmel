@@ -1,134 +1,14 @@
 pages:
-  - title: Home Page
+  - title: Home
     path: _data/pages/home.yml
-    fields:
-      - name: hero_title
-        label: Hero Title
-        type: string
-      - name: hero_subtitle
-        label: Hero Subtitle
-        type: string
-      - name: hero_description
-        label: Hero Description
-        type: text
-      - name: cta_text
-        label: Button Text
-        type: string
-
-  - title: About Page
-    path: _data/pages/about.yml
-    fields:
-      - name: title
-        label: Title
-        type: string
-      - name: subtitle
-        label: Subtitle
-        type: string
-      - name: story_title
-        label: Story Title
-        type: string
-      - name: content
-        label: Content
-        type: text
-
-  - title: Contact Page
-    path: _data/pages/contact.yml
-    fields:
-      - name: title
-        label: Title
-        type: string
-      - name: subtitle
-        label: Subtitle
-        type: string
-      - name: address
-        label: Address
-        type: string
-      - name: phone_main
-        label: Office Phone
-        type: string
-      - name: phone_mobile
-        label: Mobile Phone
-        type: string
-      - name: email_main
-        label: Main Email
-        type: string
-      - name: email_projects
-        label: Projects Email
-        type: string
-      - name: hours
-        label: Business Hours
-        type: string
-
-  - title: Site Info
-    path: data/site-info.json
-    fields:
-      - name: company_name
-        label: Company Name
-        type: string
-      - name: phone
-        label: Phone
-        type: string
-      - name: mobile
-        label: Mobile
-        type: string
-      - name: email
-        label: Email
-        type: string
-      - name: address
-        label: Address
-        type: text
 
 collections:
   - title: Projects
     name: projects
     path: _projects
-    fields:
-      - name: title
-        label: Project Name
-        type: string
-      - name: category
-        label: Category
-        type: string
-      - name: description
-        label: Description
-        type: text
-      - name: image
-        label: Image
-        type: image
-      - name: status
-        label: Status
-        type: string
-      - name: date
-        label: Date
-        type: date
-      - name: location
-        label: Location
-        type: string
 
-  - title: Team Members
+  - title: Team
     name: team
     path: _team
-    fields:
-      - name: name
-        label: Name
-        type: string
-      - name: role
-        label: Role
-        type: string
-      - name: description
-        label: Description
-        type: text
-      - name: image
-        label: Image
-        type: image
-      - name: email
-        label: Email
-        type: string
-      - name: phone
-        label: Phone
-        type: string
-      - name: order
-        label: Display Order
-        type: number
 
 media: images/uploads
