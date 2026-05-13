@@ -6,6 +6,56 @@ media:
   output: images/uploads
 
 collections:
+  - name: pages
+    label: עמודים
+    path: content/pages
+    view:
+      fields:
+        - title
+    fields:
+      - name: title
+        label: כותרת
+        type: string
+      - name: subtitle
+        label: כותרת משנה
+        type: string
+      - name: hero_title
+        label: כותרת ראשית (עמוד בית)
+        type: string
+      - name: hero_subtitle
+        label: כותרת משנה (עמוד בית)
+        type: string
+      - name: hero_description
+        label: תיאור (עמוד בית)
+        type: text
+      - name: cta_text
+        label: טקסט כפתור קריאה לפעולה
+        type: string
+      - name: story_title
+        label: כותרת סיפור החברה
+        type: string
+      - name: address
+        label: כתובת
+        type: string
+      - name: phone_main
+        label: טלפון משרד
+        type: string
+      - name: phone_mobile
+        label: טלפון נייד
+        type: string
+      - name: email_main
+        label: אימייל ראשי
+        type: string
+      - name: email_projects
+        label: אימייל פרויקטים
+        type: string
+      - name: hours
+        label: שעות פעילות
+        type: string
+      - name: body
+        label: תוכן
+        type: rich-text
+
   - name: projects
     label: פרויקטים
     path: content/projects
