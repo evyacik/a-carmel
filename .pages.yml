@@ -1,110 +1,62 @@
-object:
-  pages:
-    - title: Home Page
-      path: _data/pages/home.yml
-      fields:
-        hero_title:
-          label: Hero Title
-          type: string
-        hero_subtitle:
-          label: Hero Subtitle
-          type: string
-        hero_description:
-          label: Hero Description
-          type: text
-        cta_text:
-          label: Button Text
-          type: string
+# Pages CMS Configuration
+media: images/uploads
 
-    - title: About Page
-      path: _data/pages/about.yml
-      fields:
-        title:
-          label: Title
-          type: string
-        subtitle:
-          label: Subtitle
-          type: string
-        story_title:
-          label: Story Title
-          type: string
-        content:
-          label: Content
-          type: text
+# Single page files
+pages:
+  - name: home
+    label: Home Page
+    file: _data/pages/home.yml
+    fields:
+      - {name: hero_title, label: Hero Title, widget: string}
+      - {name: hero_subtitle, label: Hero Subtitle, widget: string}
+      - {name: hero_description, label: Description, widget: text}
+      - {name: cta_text, label: Button Text, widget: string}
 
-    - title: Contact Page
-      path: _data/pages/contact.yml
-      fields:
-        title:
-          label: Title
-          type: string
-        subtitle:
-          label: Subtitle
-          type: string
-        address:
-          label: Address
-          type: text
-        phone_main:
-          label: Main Phone
-          type: string
-        phone_mobile:
-          label: Mobile
-          type: string
-        email_main:
-          label: Email
-          type: string
-        hours:
-          label: Hours
-          type: string
+  - name: about
+    label: About Page
+    file: _data/pages/about.yml
+    fields:
+      - {name: title, label: Title, widget: string}
+      - {name: subtitle, label: Subtitle, widget: string}
+      - {name: story_title, label: Story Title, widget: string}
+      - {name: content, label: Content, widget: text}
 
-  collections:
-    - title: Projects
-      name: projects
-      path: _projects
-      fields:
-        title:
-          label: Project Title
-          type: string
-        category:
-          label: Category
-          type: string
-        description:
-          label: Description
-          type: text
-        image:
-          label: Image
-          type: image
-        status:
-          label: Status
-          type: string
-        date:
-          label: Date
-          type: date
-        location:
-          label: Location
-          type: string
+  - name: contact
+    label: Contact Page
+    file: _data/pages/contact.yml
+    fields:
+      - {name: title, label: Title, widget: string}
+      - {name: subtitle, label: Subtitle, widget: string}
+      - {name: address, label: Address, widget: text}
+      - {name: phone_main, label: Phone, widget: string}
+      - {name: phone_mobile, label: Mobile, widget: string}
+      - {name: email_main, label: Email, widget: string}
+      - {name: hours, label: Hours, widget: string}
 
-    - title: Team
-      name: team
-      path: _team
-      fields:
-        name:
-          label: Name
-          type: string
-        role:
-          label: Role
-          type: string
-        description:
-          label: Description
-          type: text
-        image:
-          label: Photo
-          type: image
-        email:
-          label: Email
-          type: string
-        phone:
-          label: Phone
-          type: string
+# Content collections
+collections:
+  - name: projects
+    label: Projects
+    folder: _projects
+    create: true
+    fields:
+      - {name: title, label: Title, widget: string}
+      - {name: category, label: Category, widget: string}
+      - {name: description, label: Description, widget: text}
+      - {name: image, label: Image, widget: image, required: false}
+      - {name: status, label: Status, widget: string}
+      - {name: date, label: Date, widget: datetime}
+      - {name: location, label: Location, widget: string, required: false}
 
-  media: images/uploads
+  - name: team
+    label: Team
+    folder: _team
+    create: true
+    fields:
+      - {name: name, label: Name, widget: string}
+      - {name: role, label: Role, widget: string}
+      - {name: description, label: Description, widget: text}
+      - {name: image, label: Photo, widget: image, required: false}
+      - {name: email, label: Email, widget: string, required: false}
+      - {name: phone, label: Phone, widget: string, required: false}
+      - {name: order, label: Order, widget: number, default: 0}
