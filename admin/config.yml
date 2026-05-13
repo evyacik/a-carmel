@@ -1,0 +1,72 @@
+backend:
+  name: github
+  repo: evyacik/a-carmel
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: he
+
+collections:
+  - name: "site_data"
+    label: "הגדרות אתר"
+    files:
+      - label: "עמוד הבית"
+        name: "home"
+        file: "_data/pages/home.yml"
+        fields:
+          - {label: "כותרת ראשית", name: "hero_title", widget: "string"}
+          - {label: "כותרת משנה", name: "hero_subtitle", widget: "string"}
+          - {label: "תיאור", name: "hero_description", widget: "text"}
+          - {label: "טקסט כפתור", name: "cta_text", widget: "string"}
+
+      - label: "דף אודות"
+        name: "about"
+        file: "_data/pages/about.yml"
+        fields:
+          - {label: "כותרת", name: "title", widget: "string"}
+          - {label: "כותרת משנה", name: "subtitle", widget: "string"}
+          - {label: "כותרת סיפור", name: "story_title", widget: "string"}
+          - {label: "תוכן", name: "content", widget: "text"}
+
+      - label: "דף צור קשר"
+        name: "contact"
+        file: "_data/pages/contact.yml"
+        fields:
+          - {label: "כותרת", name: "title", widget: "string"}
+          - {label: "כותרת משנה", name: "subtitle", widget: "string"}
+          - {label: "כתובת", name: "address", widget: "string"}
+          - {label: "טלפון משרד", name: "phone_main", widget: "string"}
+          - {label: "נייד", name: "phone_mobile", widget: "string"}
+          - {label: "אימייל ראשי", name: "email_main", widget: "string"}
+          - {label: "אימייל פרויקטים", name: "email_projects", widget: "string"}
+          - {label: "שעות פעילות", name: "hours", widget: "string"}
+
+  - name: "projects"
+    label: "פרויקטים"
+    folder: "_projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "שם הפרויקט", name: "title", widget: "string"}
+      - {label: "קטגוריה", name: "category", widget: "select", options: ["infrastructure", "towers", "residential", "industrial"]}
+      - {label: "תיאור", name: "description", widget: "text"}
+      - {label: "תמונה", name: "image", widget: "image", required: false}
+      - {label: "סטטוס", name: "status", widget: "select", options: ["in-progress", "completed"]}
+      - {label: "תאריך", name: "date", widget: "datetime"}
+      - {label: "מיקום", name: "location", widget: "string", required: false}
+
+  - name: "team"
+    label: "צוות"
+    folder: "_team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "שם", name: "name", widget: "string"}
+      - {label: "תפקיד", name: "role", widget: "string"}
+      - {label: "תיאור", name: "description", widget: "text"}
+      - {label: "תמונה", name: "image", widget: "image", required: false}
+      - {label: "אימייל", name: "email", widget: "string", required: false}
+      - {label: "טלפון", name: "phone", widget: "string", required: false}
+      - {label: "סדר תצוגה", name: "order", widget: "number", default: 0}
