@@ -1,17 +1,27 @@
-title: Carmel Construction
+title: Carmel Construction CMS
 description: מערכת ניהול תוכן לאתר כרמל בנייה ותשתיות
 
-media:
-  input: images
-  output: images/uploads
+media: images/uploads
 
-collections:
-  - name: pages
-    label: עמודים
-    path: _data/pages
-    view:
-      fields:
-        - title
+pages:
+  - title: עמוד הבית
+    path: _data/pages/home.yml
+    fields:
+      - name: hero_title
+        label: כותרת ראשית
+        type: string
+      - name: hero_subtitle
+        label: כותרת משנה
+        type: string
+      - name: hero_description
+        label: תיאור
+        type: text
+      - name: cta_text
+        label: טקסט כפתור
+        type: string
+
+  - title: דף אודות
+    path: _data/pages/about.yml
     fields:
       - name: title
         label: כותרת
@@ -19,20 +29,21 @@ collections:
       - name: subtitle
         label: כותרת משנה
         type: string
-      - name: hero_title
-        label: כותרת ראשית (עמוד בית)
-        type: string
-      - name: hero_subtitle
-        label: כותרת משנה (עמוד בית)
-        type: string
-      - name: hero_description
-        label: תיאור (עמוד בית)
-        type: text
-      - name: cta_text
-        label: טקסט כפתור קריאה לפעולה
-        type: string
       - name: story_title
-        label: כותרת סיפור החברה
+        label: כותרת סיפור
+        type: string
+      - name: content
+        label: תוכן
+        type: text
+
+  - title: דף צור קשר
+    path: _data/pages/contact.yml
+    fields:
+      - name: title
+        label: כותרת
+        type: string
+      - name: subtitle
+        label: כותרת משנה
         type: string
       - name: address
         label: כתובת
@@ -41,7 +52,7 @@ collections:
         label: טלפון משרד
         type: string
       - name: phone_mobile
-        label: טלפון נייד
+        label: נייד
         type: string
       - name: email_main
         label: אימייל ראשי
@@ -52,18 +63,11 @@ collections:
       - name: hours
         label: שעות פעילות
         type: string
-      - name: body
-        label: תוכן
-        type: rich-text
 
-  - name: projects
-    label: פרויקטים
+collections:
+  - title: פרויקטים
+    name: projects
     path: _projects
-    view:
-      fields:
-        - title
-        - category
-        - status
     fields:
       - name: title
         label: שם הפרויקט
@@ -72,17 +76,13 @@ collections:
         label: קטגוריה
         type: select
         options:
-          - value: infrastructure
-            label: תשתיות
-          - value: towers
-            label: מגדלים
-          - value: residential
-            label: בתים פרטיים
-          - value: industrial
-            label: תעשייה
+          - infrastructure
+          - towers
+          - residential
+          - industrial
       - name: description
         label: תיאור
-        type: rich-text
+        type: text
       - name: image
         label: תמונה
         type: image
@@ -90,10 +90,8 @@ collections:
         label: סטטוס
         type: select
         options:
-          - value: in-progress
-            label: בביצוע
-          - value: completed
-            label: הושלם
+          - in-progress
+          - completed
       - name: date
         label: תאריך
         type: date
@@ -101,13 +99,9 @@ collections:
         label: מיקום
         type: string
 
-  - name: team
-    label: חברי צוות
+  - title: צוות
+    name: team
     path: _team
-    view:
-      fields:
-        - name
-        - role
     fields:
       - name: name
         label: שם
@@ -117,7 +111,7 @@ collections:
         type: string
       - name: description
         label: תיאור
-        type: rich-text
+        type: text
       - name: image
         label: תמונה
         type: image
